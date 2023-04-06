@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 08:00:49 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/06 10:11:25 by makurz           ###   ########.fr       */
+/*   Created: 2023/04/06 08:40:41 by makurz            #+#    #+#             */
+/*   Updated: 2023/04/06 08:41:04 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#include <stdio.h>
+#include <unistd.h>
 
-#include <fcntl.h>
-#include <stdlib.h>
-#include <stddef.h>
+int main()
+{
+	char buffer[10];
+	ssize_t bytes_read;
 
-# ifndef MAX_FD
-#  define MAX_FD 10240
-# endif
+	// Attempt to read 10 bytes from standard input
+	bytes_read = read(STDIN_FILENO, buffer, 10);
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1024
-# endif
+	printf("Bytes read: %ld\n", bytes_read);
 
-#endif // !GET_NEXT_LINE_BONUS_H
+	return 0;
+}
