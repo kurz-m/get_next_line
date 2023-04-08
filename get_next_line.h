@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 00:09:22 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/08 19:55:49 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/08 21:00:53 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,4 @@ char	*get_next_line(int fd);
 char	*ft_strjoin(char *s1, char *s2, t_gnl str);
 int		ft_clean_stash(char *str, t_gnl next);
 
-#endif // !GET_NEXT_LINE_BONUS_HGET_NEXT_LINE_BONUS_H
+#endif // GET_NEXT_LINE_BONUS_H
