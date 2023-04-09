@@ -6,30 +6,30 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:47 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/09 10:24:06 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/09 11:10:12 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
+// Resets the stash and keeps string after new_line char.
 int	ft_clean_stash(char *str, t_gnl next)
 {
-	int		new_line;
-
-	new_line = FALSE;
+	next.line_bool = FALSE;
 	next.i = 0;
 	next.k = 0;
 	while (str[next.i])
 	{
-		if (new_line == TRUE)
+		if (next.line_bool == TRUE)
 			str[next.k++] = str[next.i];
 		if (str[next.i] == '\n')
-			new_line = TRUE;
+			next.line_bool = TRUE;
 		str[next.i++] = '\0';
 	}
-	return (new_line);
+	return (next.line_bool);
 }
 
+// Adapted strlen function to fit the need of get_next_line.
 static size_t	ft_strlen(const char *str)
 {
 	size_t	i;
@@ -44,6 +44,7 @@ static size_t	ft_strlen(const char *str)
 	return (i);
 }
 
+// joins the strings until a new_line appears.
 char	*ft_strjoin(char *s1, char *s2, t_gnl str)
 {
 	str.new_line = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);

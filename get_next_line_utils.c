@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:47 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/08 20:09:17 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/09 11:08:02 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,18 @@
 
 int	ft_clean_stash(char *str, t_gnl next)
 {
-	int		new_line;
-
-	new_line = FALSE;
+	next.line_bool = FALSE;
 	next.i = 0;
 	next.k = 0;
 	while (str[next.i])
 	{
-		if (new_line == TRUE)
+		if (next.line_bool == TRUE)
 			str[next.k++] = str[next.i];
 		if (str[next.i] == '\n')
-			new_line = TRUE;
+			next.line_bool = TRUE;
 		str[next.i++] = '\0';
 	}
-	return (new_line);
+	return (next.line_bool);
 }
 
 static size_t	ft_strlen(const char *str)
