@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 00:09:22 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/09 11:09:33 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/09 15:09:31 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 # include <stdlib.h>
 # include <stddef.h>
 
-typedef enum s_bool {
+typedef enum s_bool
+{
 	FALSE,
 	TRUE
 }	t_bool;
