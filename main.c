@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 08:40:41 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/07 19:10:56 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/10 15:18:48 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,10 @@ int	main(void)
 	int		fd;
 	char	*line;
 
-	fd = open("./test.txt", O_RDONLY);
-	while (1)
+	line = NULL;
+	fd = open("../get_next_line_tests/multiple_new_line.txt", O_RDONLY);
+	while ((line = get_next_line(fd)) != NULL)
 	{
-		line = get_next_line(fd);
-		if (line == NULL)
-			break ;
 		printf("new line: #%s", line);
 		free(line);
 	}
