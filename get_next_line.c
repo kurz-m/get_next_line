@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:31 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/08 23:40:45 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/11 14:02:49 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ char	*get_next_line(int fd)
 	while (stash[0] != '\0' || read(fd, stash, BUFFER_SIZE) > 0)
 	{
 		next.new_line = ft_strjoin(next.new_line, stash, next);
-		if (ft_clean_stash(stash, next) == TRUE)
+		if (next.new_line == NULL)
+			return (NULL);
+		if (ft_clean_stash(stash, next) == true)
 			break ;
 		if (read(fd, stash, 0) < 0)
-		{
-			free(next.new_line);
-			return (NULL);
-		}
+			return (free(next.new_line), NULL);
 	}
 	return (next.new_line);
 }

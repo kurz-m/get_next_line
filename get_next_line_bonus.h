@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 00:09:22 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/09 15:09:31 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/11 11:26:40 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,23 +18,18 @@
 # endif
 
 # ifndef MAX_FD
-#  define MAX_FD 42
+#  define MAX_FD 20
 # endif
 
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
-
-typedef enum s_bool
-{
-	FALSE,
-	TRUE
-}	t_bool;
+# include <stdbool.h>
 
 typedef struct s_gnl
 {
 	char	*new_line;
-	t_bool	line_bool;
+	bool	line_bool;
 	size_t	i;
 	size_t	k;
 }	t_gnl;

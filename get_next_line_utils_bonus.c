@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:47 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/09 11:10:12 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/11 09:02:04 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 // Resets the stash and keeps string after new_line char.
 int	ft_clean_stash(char *str, t_gnl next)
 {
-	next.line_bool = FALSE;
+	next.line_bool = false;
 	next.i = 0;
 	next.k = 0;
 	while (str[next.i])
 	{
-		if (next.line_bool == TRUE)
+		if (next.line_bool == true)
 			str[next.k++] = str[next.i];
 		if (str[next.i] == '\n')
-			next.line_bool = TRUE;
+			next.line_bool = true;
 		str[next.i++] = '\0';
 	}
 	return (next.line_bool);
