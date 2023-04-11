@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:47 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/11 09:02:04 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/11 16:52:50 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static size_t	ft_strlen(const char *str)
 char	*ft_strjoin(char *s1, char *s2, t_gnl str)
 {
 	str.new_line = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!str.new_line)
+	if (str.new_line == NULL)
 		return (NULL);
 	str.i = 0;
 	str.k = 0;
