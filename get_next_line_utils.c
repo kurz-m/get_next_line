@@ -6,7 +6,7 @@
 /*   By: makurz <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 16:13:47 by makurz            #+#    #+#             */
-/*   Updated: 2023/04/11 16:52:33 by makurz           ###   ########.fr       */
+/*   Updated: 2023/04/18 12:29:00 by makurz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ char	*ft_strjoin(char *s1, char *s2, t_gnl str)
 	}
 	str.new_line[str.i] = '\0';
 	free (s1);
+	s1 = NULL;
 	return (str.new_line);
 }
